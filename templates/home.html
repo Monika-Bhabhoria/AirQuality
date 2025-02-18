@@ -1,0 +1,64 @@
+
+<html>
+<body>
+    <div class="login">
+       <h1>Air Quality Indicator</h1>
+   
+       <form action="{{ url_for('predict_datapoint')}}" method="post">
+        <h1>
+            <legend>Air Quality Indicator</legend>
+        </h1>
+        <div class="mb-3">
+            <label class="form-label">Temperature</label>
+            <input class="form-control" type="number" name="Temperature"
+                placeholder="Enter Temperature(Cel)" min='-20' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Humidity</label>
+            <input class="form-control" type="number" name="Humidity"
+                placeholder="Enter Humidity" min='-20' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PM25</label>
+            <input class="form-control" type="number" name="PM25"
+                placeholder="Enter PM2.5" min='-20' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">PM10</label>
+            <input class="form-control" type="number" name="PM10"
+                placeholder="Enter PM10" min='-20' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">NO2</label>
+            <input class="form-control" type="number" name="NO2"
+                placeholder="Enter NO2" min='-20' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">SO2</label>
+            <input class="form-control" type="number" name="SO2"
+                placeholder="Enter SO2" min='-20' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">CO</label>
+            <input class="form-control" type="number" name="CO"
+                placeholder="Enter CO" min='-20' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Proximity_to_Industrial_Areas</label>
+            <input class="form-control" type="number" name="Proximity_to_Industrial_Areas"
+                placeholder="Enter Proximity_to_Industrial_Areas" min='-20' max='100' />
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Population_Density</label>
+            <input class="form-control" type="number" name="Population_Density"
+                placeholder="Enter Population_Density" min='-20' max='500' />
+        </div>
+        <div class="mb-3">
+            <input class="btn btn-primary" type="submit" value="Predict Air Quality" required />
+        </div>
+    </form>
+    <h2>
+       THE  prediction is {{results}}
+    </h2>
+   <body>
+</html>
