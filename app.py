@@ -46,7 +46,7 @@ def predict_datapoint():
 if __name__=="__main__":
     # app.run(host="0.0.0.0",port=8080)        
     app.run(host='0.0.0.0', port=8080)  
-    #test
+    #test123
     predict_pipeline=PredictPipeline()
     #results=predict_pipeline.predict([[26.5,70.7,6.9,16,21.9,5.6,1.01,12.7,303]])  # Good
     #results=predict_pipeline.predict([[39.4,96.6,14.6,35.5,42.9,17.9,1.82,3.1,674]])  #Hazardous
