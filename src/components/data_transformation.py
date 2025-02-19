@@ -149,6 +149,6 @@ class DataTransformation:
 if __name__=="__main__":
    
     data_transformation=DataTransformation()
-    train_arr,test_arr,_=data_transformation.initiate_data_transformation("C:/Monika/Projects/AirQuality/artifacts/train.csv","C:/Monika/Projects/AirQuality/artifacts/test.csv")
+    train_arr,test_arr,_=data_transformation.initiate_data_transformation("//artifacts/train.csv","//artifacts/test.csv")
 
  

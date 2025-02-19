@@ -31,40 +31,8 @@ class ModelTrainer:
                 test_array[:,:-1],
                 test_array[:,-1]
             )
-            # col = train_array.columns.tolist().index('AirQuality')
-            # i1 = train_array.iloc[:,col] == 'Good'
-            # i2 = train_array.iloc[:,col] == 'Hazardous'
-            # i3 = train_array.iloc[:,col] == 'Moderate'
-            # i4 = train_array.iloc[:,col] == 'Poor' 
-
-            # train_array.iloc[i1,col] = 0
-            # train_array.iloc[i2,col] = 1
-            # train_array.iloc[i3,col] = 2
-            # train_array.iloc[i4,col] = 3
-            # train_array['AirQuality'] = train_array['AirQuality'].astype('int')
-
-            # col = test_array.columns.tolist().index('AirQuality')
-            # i1 = test_array.iloc[:,col] == 'Good'
-            # i2 = test_array.iloc[:,col] == 'Hazardous'
-            # i3 = test_array.iloc[:,col] == 'Moderate'
-            # i4 = test_array.iloc[:,col] == 'Poor' 
-
-            # test_array.iloc[i1,col] = 0
-            # test_array.iloc[i2,col] = 1
-            # test_array.iloc[i3,col] = 2
-            # test_array.iloc[i4,col] = 3
-            # test_array['AirQuality'] = test_array['AirQuality'].astype('int')
-
-
-            # X_train=train_array.drop('AirQuality',axis=1)
-            # y_train=train_array['AirQuality']
-            # X_test=test_array.drop('AirQuality',axis=1)
-            # y_test=test_array['AirQuality']
-
-            # from sklearn.preprocessing import MinMaxScaler
-            # scl = MinMaxScaler().fit(X_train)
-            # X_train = scl.transform(X_train)
-            # X_test = scl.transform(X_test)
+            
+          
             
             param = [1,2]
             clf = SVC(random_state=0, probability=True)
@@ -76,18 +44,10 @@ class ModelTrainer:
             ## To get best model score from dict
             clf2 = clf1.best_estimator_
             clf2.fit(X_train, y_train)
-            #ytp = clf2.predict_proba(X_test)
-
-            ## To get best model name from dict
-
-            # best_model_name = list(model_report.keys())[
-            #     list(model_report.values()).index(best_model_score)
-            # ]
+          
             best_model = clf2
 
-            # if best_model_score<0.6:
-            #     raise CustomException("No best model found")
-            # logging.info(f"Best found model on both training and testing dataset")
+ 
 
             save_object(
                 file_path=self.model_trainer_config.trained_model_file_path,
