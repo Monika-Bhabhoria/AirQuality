@@ -11,3 +11,11 @@ Project structure and flow:
 
 For CI/CD - git repository and AWS ECR are used.
 *Note: AWS app runner URI is no more live for use.
+
+Steps for CICD:
+- Create dockerfile.
+- Create yaml file with steps to CI and CD
+- On AWS, create a ECR repository, IAM user
+- Add variables Settlings/secrets and variables
+- On AWS, create Apprunner service and link it with ECR repo.
+- After successfull deployment of apprunner service, AWS will provide URI for the website.
