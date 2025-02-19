@@ -31,6 +31,7 @@ jobs:
         ECR_REPOSITORY: app1
         IMAGE_TAG: latest
       run: |
+        aws ecr get-login-password --region us-west-2 | docker login --username AWS --password-stdin 664449563499.dkr.ecr.us-west-2.amazonaws.com
         docker build -t airquality/app1 .
         docker tag airquality/app1:latest 664449563499.dkr.ecr.us-west-2.amazonaws.com/airquality/app1:latest
         docker push 664449563499.dkr.ecr.us-west-2.amazonaws.com/airquality/app1:latest
